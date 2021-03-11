@@ -64,7 +64,7 @@ public class Readme {
 	 *		注：log只能看当前版本之前的记录，reflog可以查看当前版本之后的记录，用于回退时查询提交id
 	 *	git reset --hard HEAD^ 回到当前版本的上一个版本，同理HEAD^^代表当前版本的前两个版本
 	 *	git reset --hard  4f36ad5735d75e92d167db410c321f9c43354390  回到制定提交id的版本 
-	 *	
+	 *	注：eclipse中选择分支右键->show in History中选择对应的版本进行reset，但是不会显示当前版本之后的记录，可以通过git reflog查询后使用命令进行回退。
 	 *
 	 *	工作区（Working Directory）：电脑中可以看到的目录，如上述的learn_git文件夹，每个项目对应一个工作区。
 	 *	版本库（Repository）：每一个工作区中都有一个隐藏的.git文件夹，它就是Git的版本库，使用git init后，即会在该文件夹下创建。
@@ -115,6 +115,5 @@ public class Readme {
 	 *			  git stash list：查看所有工作现场
 	 *			  git stash pop：恢复并删除stash，如果进行了多次stash，也可以先通过list查出所有的工作现场的名称，一般为stash@{x}，然后对指定的进行恢复git stash apply stash@{0}，使用后最好进行删除git stash drop
 	 *
-	 *ssss
 	 */
 }
