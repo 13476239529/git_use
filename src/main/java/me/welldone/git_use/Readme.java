@@ -74,5 +74,20 @@ public class Readme {
 	 *	撤销工作区的更改：git checkout -- Readme.java，  git checkout -- *表示对当前目录下的所有文件都执行撤销，其实就是从分支重新检出。
 	 *	撤销工作区的更改，并且已经添加到了暂存区：git reset HEAD Readme.java，然后使用git checkout
 	 *	注：使用eclipse的Git插件可以在Git Staging窗口使用Replace with HEAD Rversion进行修改撤回。
+	 *
+	 *	工作区文件删除：
+	 *		误删：git checkout -- Readme.java，恢复到最新版本，但是期间的修改会永远丢失
+	 *		正常删除：git rm <file>，其作用于git add类似，无非一个是新增，一个是删除，都是会进入暂存区的，然后commit进行删除的提交
+	 *
+	 *	关连远程仓库：git remote add origin git@server-name:path/repo-name.git；origin表示给远程仓库取的名字，这是Git默认的叫法，也可以改成别的。一般我们只需要跟扮演“中央服务器”的远程库做关联。
+	 *			以上为ssh形式的仓库地址；也可以关联https形式的仓库地址：git remote add origin https://github.com/13476239529/git_use.git。			
+	 *	查看关联的远程仓库：git remote -v
+	 *		origin  http://10.100.21.13/datacenter/yzbizcenter.git (fetch)
+	 *		origin  http://10.100.21.13/datacenter/yzbizcenter.git (push)
+	 *		注：fetch、push代表了获取和推送的地址
+	 *	删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
+	 *	将本地库的所有内容推送到远程库上： git push -u origin master
+	 *		如果出现Warning: Permanently added 'github.com,222.42.5.41' (RSA) to the list of known hosts.git@github.com: Permission denied (publickey).fatal: Could not read from remote repository.（可以百度搜索解决方式，也可以使用https的形式与远程库进行关联）
+	 *		
 	 */
 }
