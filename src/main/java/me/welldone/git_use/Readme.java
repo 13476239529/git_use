@@ -71,7 +71,7 @@ public class Readme {
 	 *		版本库中包含两个重要的部分：暂存区和分支，暂存区称为stage或index；默认的分支为master，也是在git init后创建
 	 *	注：工作区的文件通过git add添加到暂存区，暂存区的内容通过git commit<一次性>提交到某个分支中。如果某个文件第一次进行了修改并add到暂存区，然后进行第二次修改，此时进行commit只会将第一次的修改提交到分支，第二次修改没有add到暂存区，是不会进行提交的。
 	 *
-	 *	撤销工作区的更改：git checkout -- Readme.java，  git checkout表示对当前目录下的所有文件都执行撤销
+	 *	撤销工作区的更改：git checkout -- Readme.java，  git checkout -- *表示对当前目录下的所有文件都执行撤销，其实就是从分支重新检出。
 	 *	撤销工作区的更改，并且已经添加到了暂存区：git reset HEAD
 	 */
 }
