@@ -78,15 +78,21 @@ public class Readme {
 	 *	工作区文件删除：
 	 *		误删：git checkout -- Readme.java，恢复到最新版本，但是期间的修改会永远丢失
 	 *		正常删除：git rm <file>，其作用于git add类似，无非一个是新增，一个是删除，都是会进入暂存区的，然后commit进行删除的提交
-	 *
-	 *	关连远程仓库：git remote add origin git@server-name:path/repo-name.git；origin表示给远程仓库取的名字，这是Git默认的叫法，也可以改成别的。一般我们只需要跟扮演“中央服务器”的远程库做关联。
-	 *			以上为ssh形式的仓库地址；也可以关联https形式的仓库地址：git remote add origin https://github.com/13476239529/git_use.git。			
-	 *	查看关联的远程仓库：git remote -v
-	 *		origin  http://10.100.21.13/datacenter/yzbizcenter.git (fetch)
-	 *		origin  http://10.100.21.13/datacenter/yzbizcenter.git (push)
-	 *		注：fetch、push代表了获取和推送的地址
-	 *	删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
-	 *	将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称
-	 *		
+	 *	
+	 *	远程仓库：
+	 *		关连远程仓库：git remote add origin git@server-name:path/repo-name.git；origin表示给远程仓库取的名字，这是Git默认的叫法，也可以改成别的。一般我们只需要跟扮演“中央服务器”的远程库做关联。
+	 *				以上为ssh形式的仓库地址；也可以关联https形式的仓库地址：git remote add origin https://github.com/13476239529/git_use.git。			
+	 *		查看关联的远程仓库：git remote -v
+	 *			origin  http://10.100.21.13/datacenter/yzbizcenter.git (fetch)
+	 *			origin  http://10.100.21.13/datacenter/yzbizcenter.git (push)
+	 *			注：fetch、push代表了获取和推送的地址
+	 *		删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
+	 *		将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称
+	 *	
+	 *	分支：
+	 *		查看本地仓库分支：git branch ，其中带星号的表示当前当前所处的分支。
+	 *		查看远程仓库分支：git branch -a，可以显示本地+远程的所有分支，其中远程仓库分支是红色字体展示，如remotes/origin/master，会同时展示远程仓库名和分支名，因为可以关联多个远程仓库，如果多个远程仓库中存在分支名相同的情况，可以进行区分
+	 *		创建一个分支：
+	 *		创建并切换到一个新的分支：git checkout -b dev，此命令等于git 	
 	 */
 }
