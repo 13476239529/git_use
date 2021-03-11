@@ -54,6 +54,9 @@ public class Readme {
 	 *	
 	 *	git status告诉你有文件被修改过
 	 *	git diff可以查看修改内容
+	 *	git log 查看提交记录
+	 *	git reset --hard HEAD^ 回到当前版本的上一个版本，同理HEAD^^代表当前版本的三两个版本
+	 *	git reset --hard  4f36ad5735d75e92d167db410c321f9c43354390  回到制定提交id的版本 
 	 *
 	 */
 }
