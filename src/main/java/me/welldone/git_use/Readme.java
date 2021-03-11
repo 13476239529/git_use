@@ -35,8 +35,8 @@ public class Readme {
 	 *		
 	 *	将文件提交到版本库：
 	 *		1.在/d/learn_git目录下创建一个文件。注：一定要放到learn_git目录下（子目录也行），因为learn_git一个Git仓库，放到其他地方Git再厉害也找不到这个文件
-	 *		2.git add <file> 添加到仓库，把要提交的所有修改放到暂存区（Stage）
-	 *		3.git commit -m <message> 提交到仓库，把暂存区的所有修改提交到分支
+	 *		2.git add <file> 添加到仓库，把要提交的所有修改放到暂存区（Stage/index）
+	 *		3.git commit -m <message> 提交到仓库，把暂存区的所有修改一次性提交到分支（branch）
 	 *		welld@welldone MINGW64 /d/learn_git (master)
 	 *		$ touch readme.txt
 	 *
@@ -64,7 +64,7 @@ public class Readme {
 	 *	工作区（Working Directory）：电脑中可以看到的目录，如上述的learn_git文件夹，每个项目对应一个工作区。
 	 *	版本库（Repository）：每一个工作区中都有一个隐藏的.git文件夹，它就是Git的版本库，使用git init后，即会在该文件夹下创建。
 	 *		版本库中包含两个重要的部分：暂存区和分支，暂存区称为stage或index；默认的分支为master，也是在git init后创建
-	 *	注：工作区的文件通过git add添加到暂存区，暂存区的内容通过commit<一次性>提交到某个分支中。
+	 *	注：工作区的文件通过git add添加到暂存区，暂存区的内容通过git commit<一次性>提交到某个分支中。如果某个文件第一次进行了修改并add到暂存区，然后进行第二次修改，此时进行commit只会将第一次的修改提交到分支，第二次修改没有add到暂存区，是不会进行提交的。
 	 *
 	 */
 }
