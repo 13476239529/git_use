@@ -85,14 +85,34 @@ public class Readme {
 	 *		查看关联的远程仓库：git remote -v
 	 *			origin  http://10.100.21.13/datacenter/yzbizcenter.git (fetch)
 	 *			origin  http://10.100.21.13/datacenter/yzbizcenter.git (push)
-	 *			注：fetch、push代表了获取和推送的地址
+	 *			注：fetch、push代表了获取和推送的地址，如果看不到push地址则说明没有推送权限。
 	 *		删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
 	 *		将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称
 	 *	
 	 *	分支：
 	 *		查看本地仓库分支：git branch ，其中带星号的表示当前当前所处的分支。
 	 *		查看远程仓库分支：git branch -a，可以显示本地+远程的所有分支，其中远程仓库分支是红色字体展示，如remotes/origin/master，会同时展示远程仓库名和分支名，因为可以关联多个远程仓库，如果多个远程仓库中存在分支名相同的情况，可以进行区分
-	 *		创建一个分支：
-	 *		创建并切换到一个新的分支：git checkout -b dev，此命令等于git 	
+	 *		创建一个分支：git branch dev，如当前在master分支，则会以master为基准创建dev分支，此时dev与master内容一致
+	 *				如果当前分支还存在未提交的修改，会提示：Please commit your changes or stash them before you switch branches.
+	 *		切换到其它分支：git checkout dev 或 git switch dev
+	 *		分支合并：git merge dev，如果当前在master分支，则会将dev分支合并到master分支。
+	 *		分支删除：git branch -d dev，如果当前在master分支，没有将dev分支合并到master，则该命令无法成功执行。有两种处理办法：1.先merge再删除 2.使用-D进行强制删除
+	 *	
+	 *	分支类型：
+	 *		一般情况下，会对分支进行以下的管理
+	 *		master:用来版本发布
+	 *		release:
+	 *		develop:
+	 *		feature:用来开发具体的功能，一般fork自develop分支，最终可能会合并到develop分支。比如我们要在下一个版本增加功能1、功能2、功能3。那么我们就可以起三个feature 分支：feature1，feature2，feature3。随着我们开发，功能1和功能2都被完成了，而功能3因为某些原因完成不了，那么最终feature1和feature2分支将被合并到develop分支，而feature3分支将被干掉。
+	 *		hotfix:用来修复线上bug，修复bug之后再将hotfix分支合并到master分支并进行发布，同时develop 分支作为最新最全的代码分支，hotfix分支也需要合并到develop分支上去（切记！！！）
+	 *		
+	 *	真实场景：当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支hotfix-101来修复它，但是，等等，当前正在dev上进行的工作还没有提交,
+	 *			  并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
+	 *			  注：此时是无法从dev分支切换到hotfix-101的，git会提示Please commit your changes or stash them before you switch branches.
+	 *			  其实git已经给出了解决方案：提交或stash
+	 *			  
+	 *			  git stash：可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
+	 *			  git stash list：查看所有工作现场
+	 *			  git stash pop：恢复并删除stash，如果进行了多次stash，也可以先通过list查出所有的工作现场的名称，一般为stash@{x}，然后对指定的进行恢复git stash apply stash@{0}，使用后最好进行删除git stash drop
 	 */
 }
