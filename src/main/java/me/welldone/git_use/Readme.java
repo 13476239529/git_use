@@ -59,6 +59,12 @@ public class Readme {
 	 *		注：log只能看当前版本之前的记录，reflog可以查看当前版本之后的记录，用于回退时查询提交id
 	 *	git reset --hard HEAD^ 回到当前版本的上一个版本，同理HEAD^^代表当前版本的前两个版本
 	 *	git reset --hard  4f36ad5735d75e92d167db410c321f9c43354390  回到制定提交id的版本 
+	 *	
+	 *
+	 *	工作区（Working Directory）：电脑中可以看到的目录，如上述的learn_git文件夹，每个项目对应一个工作区。
+	 *	版本库（Repository）：每一个工作区中都有一个隐藏的.git文件夹，它就是Git的版本库，使用git init后，即会在该文件夹下创建。
+	 *		版本库中包含两个重要的部分：暂存区和分支，暂存区称为stage或index；默认的分支为master，也是在git init后创建
+	 *	注：工作区的文件通过git add添加到暂存区，暂存区的内容通过commit<一次性>提交到某个分支中。
 	 *
 	 */
 }
