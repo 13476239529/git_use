@@ -51,7 +51,9 @@ public class Readme {
 	 *		[master (root-commit) 624c335] 1
 	 *		1 file changed, 1 insertion(+)
 	 *		create mode 100644 readme.txt
-	 *
+	 *	
+	 *	git status告诉你有文件被修改过
+	 *	git diff可以查看修改内容
 	 *
 	 */
 }
