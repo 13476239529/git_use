@@ -52,7 +52,11 @@ public class Readme {
 	 *		1 file changed, 1 insertion(+)
 	 *		create mode 100644 readme.txt
 	 *	
-	 *	git status告诉你有文件被修改过
+	 *	git status当前目录下文件的状态
+	 *		Changes not staged for commit（未添加到暂存区）：发生过修改，但是还没有添加到暂存区的文件列表。
+	 *		Untracked files（未追踪）：未添加到版本库，且未添加到暂存区的文件列表。 注：如果此时将其添加到暂存区会变成Changes to be committed
+	 *		Changes to be committed（可提交）：已添加到暂存区，可以进行提交的文件列表。
+	 *
 	 *	git diff可以查看修改内容
 	 *	git log 查看提交记录
 	 *	git reflog 查看提交记录
@@ -65,6 +69,5 @@ public class Readme {
 	 *	版本库（Repository）：每一个工作区中都有一个隐藏的.git文件夹，它就是Git的版本库，使用git init后，即会在该文件夹下创建。
 	 *		版本库中包含两个重要的部分：暂存区和分支，暂存区称为stage或index；默认的分支为master，也是在git init后创建
 	 *	注：工作区的文件通过git add添加到暂存区，暂存区的内容通过git commit<一次性>提交到某个分支中。如果某个文件第一次进行了修改并add到暂存区，然后进行第二次修改，此时进行commit只会将第一次的修改提交到分支，第二次修改没有add到暂存区，是不会进行提交的。
-	 *
 	 */
 }
