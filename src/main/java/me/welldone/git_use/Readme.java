@@ -35,8 +35,8 @@ public class Readme {
 	 *		
 	 *	将文件提交到版本库：
 	 *		1.在/d/learn_git目录下创建一个文件。注：一定要放到learn_git目录下（子目录也行），因为learn_git一个Git仓库，放到其他地方Git再厉害也找不到这个文件
-	 *		2.git add <file> 添加到仓库
-	 *		3.git commit -m <message> 提交到仓库
+	 *		2.git add <file> 添加到仓库，把要提交的所有修改放到暂存区（Stage）
+	 *		3.git commit -m <message> 提交到仓库，把暂存区的所有修改提交到分支
 	 *		welld@welldone MINGW64 /d/learn_git (master)
 	 *		$ touch readme.txt
 	 *
