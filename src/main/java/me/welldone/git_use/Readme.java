@@ -86,8 +86,7 @@ public class Readme {
 	 *		origin  http://10.100.21.13/datacenter/yzbizcenter.git (push)
 	 *		注：fetch、push代表了获取和推送的地址
 	 *	删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
-	 *	将本地库的所有内容推送到远程库上： git push -u origin master
-	 *		如果出现Warning: Permanently added 'github.com,222.42.5.41' (RSA) to the list of known hosts.git@github.com: Permission denied (publickey).fatal: Could not read from remote repository.（可以百度搜索解决方式，也可以使用https的形式与远程库进行关联）
+	 *	将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称
 	 *		
 	 */
 }
