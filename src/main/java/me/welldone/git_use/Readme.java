@@ -87,7 +87,8 @@ public class Readme {
 	 *			origin  http://10.100.21.13/datacenter/yzbizcenter.git (push)
 	 *			注：fetch、push代表了获取和推送的地址，如果看不到push地址则说明没有推送权限。
 	 *		删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
-	 *		将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称
+	 *		将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称，如果该分支在远程仓库不存在，一般会自动进行创建。
+	 *		配置ssh方式见：https://blog.csdn.net/coco_1998_2/article/details/84993088
 	 *	
 	 *	分支：
 	 *		查看本地仓库分支：git branch ，其中带星号的表示当前当前所处的分支。
@@ -101,12 +102,11 @@ public class Readme {
 	 *	分支类型：
 	 *		一般情况下，会对分支进行以下的管理
 	 *		master:用来版本发布
-	 *		release:
-	 *		develop:
-	 *		feature:用来开发具体的功能，一般fork自develop分支，最终可能会合并到develop分支。比如我们要在下一个版本增加功能1、功能2、功能3。那么我们就可以起三个feature 分支：feature1，feature2，feature3。随着我们开发，功能1和功能2都被完成了，而功能3因为某些原因完成不了，那么最终feature1和feature2分支将被合并到develop分支，而feature3分支将被干掉。
-	 *		hotfix:用来修复线上bug，修复bug之后再将hotfix分支合并到master分支并进行发布，同时develop 分支作为最新最全的代码分支，hotfix分支也需要合并到develop分支上去（切记！！！）
+	 *		develop:开发分支，在发布版本之前合并到master分支。
+	 *		feature:从devlop分支fork出来，最终合并到develop分支。用来开发具体的功能，一般fork自develop分支，最终可能会合并到develop分支。比如我们要在下一个版本增加功能1、功能2、功能3。那么我们就可以起三个feature 分支：feature1，feature2，feature3。随着我们开发，功能1和功能2都被完成了，而功能3因为某些原因完成不了，那么最终feature1和feature2分支将被合并到develop分支，而feature3分支将被干掉。
+	 *		hotfix:从master分支fork出来，最终合并到master和develop分支。用来修复线上bug，修复bug之后再将hotfix分支合并到master分支并进行发布，同时develop 分支作为最新最全的代码分支，hotfix分支也需要合并到develop分支上去（切记！！！）
 	 *		
-	 *	真实场景：当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支hotfix-101来修复它，但是，等等，当前正在dev上进行的工作还没有提交,
+	 *	真实场景：当你接到一个修复一个代号101的bug的任务时，很自然地，你想从master创建一个分支hotfix-101来修复它，但是，等等，当前正在dev上进行的工作还没有提交,
 	 *			  并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
 	 *			  注：此时是无法从dev分支切换到hotfix-101的，git会提示Please commit your changes or stash them before you switch branches.
 	 *			  其实git已经给出了解决方案：提交或stash
@@ -114,5 +114,14 @@ public class Readme {
 	 *			  git stash：可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
 	 *			  git stash list：查看所有工作现场
 	 *			  git stash pop：恢复并删除stash，如果进行了多次stash，也可以先通过list查出所有的工作现场的名称，一般为stash@{x}，然后对指定的进行恢复git stash apply stash@{0}，使用后最好进行删除git stash drop
+	 *
+	 *	合并过程：开发完一个新的feature分支后，合并到develop分支
+	 *		1.切换到feature分支，拉取最新代码
+	 *		2.切换到develop分支，拉取最新代码
+	 *		3.在develop分支下，执行git merge feature，将feature合并到develop。如果有冲突则进行解决
+	 *		4.在develop分支下提交代码并推送到远程仓库
+	 *		5.可根据需要删除feature分支
+	 *
+	 *		
 	 */
 }
