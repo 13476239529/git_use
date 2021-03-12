@@ -88,7 +88,7 @@ public class Readme {
 	 *			注：fetch、push代表了获取和推送的地址，如果看不到push地址则说明没有推送权限。
 	 *		删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
 	 *		将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称，如果该分支在远程仓库不存在，一般会自动进行创建。
-	 *		配置ssh方式见：https://blog.csdn.net/coco_1998_2/article/details/84993088
+	 *		注：使用https地址进行推送需要输入账号密码，如果使用ssh方式，需要进行一些配置：https://blog.csdn.net/coco_1998_2/article/details/84993088
 	 *	
 	 *	分支：
 	 *		查看本地仓库分支：git branch ，其中带星号的表示当前当前所处的分支。
