@@ -114,6 +114,13 @@ public class Readme {
 	 *			  git stash：可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
 	 *			  git stash list：查看所有工作现场
 	 *			  git stash pop：恢复并删除stash，如果进行了多次stash，也可以先通过list查出所有的工作现场的名称，一般为stash@{x}，然后对指定的进行恢复git stash apply stash@{0}，使用后最好进行删除git stash drop
-	 * sss
+	 *
+	 *	合并过程：开发完一个新的feature分支后，合并到develop分支
+	 *		1.切换到feature分支，拉取最新代码
+	 *		2.切换到develop分支，拉取最新代码
+	 *		3.在develop分支下，执行git merge feature，将feature合并到develop。如果有冲突则进行解决
+	 *		4.在develop分支下提交代码并推送到远程仓库
+	 *		5.可根据需要删除feature分支
+	 *
 	 */
 }
