@@ -70,6 +70,8 @@ public class Readme {
 	 *	注：reset与revert的区别
 	 *		reset：回退<至>某个版本，不保存被回退版本的提交记录。且使用reset回退后需要使用git push -f 进行强制推送，因为此时我们本地库HEAD指向的版本比远程库的要旧
 	 *		revert：回退某个版本，保存被回退版本的提交记录，且revert后会生成一个新的版本
+	 *	git rebase 变基
+	 *		1.合并多个commit为一个完整commit：当我们在本地仓库中提交了多次，在我们把本地提交push到公共仓库中之前，为了让提交记录更简洁明了，我们希望把如下分支B、C、D三个提交记录合并为一个完整的提交，然后再push到公共仓库。
 	 *
 	 *	工作区（Working Directory）：电脑中可以看到的目录，如上述的learn_git文件夹，每个项目对应一个工作区。
 	 *	版本库（Repository）：每一个工作区中都有一个隐藏的.git文件夹，它就是Git的版本库，使用git init后，即会在该文件夹下创建。
