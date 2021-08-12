@@ -65,6 +65,11 @@ public class Readme {
 	 *	git reset --hard HEAD^ 回到当前版本的上一个版本，同理HEAD^^代表当前版本的前两个版本
 	 *	git reset --hard  4f36ad5735d75e92d167db410c321f9c43354390  回到制定提交id的版本 
 	 *	注：eclipse中选择分支右键->show in History中选择对应的版本进行reset，但是不会显示当前版本之后的记录，可以通过git reflog查询后使用命令进行回退。
+	 *	git reset --hard  4f36ad5735d75e92d167db410c321f9c43354390  回到指定提交id的版本
+	 *  git revert <committed>  revert commit_id能产生一个与commit_id 完全相反的提交，即 commit_id 里是添加， revert 提交里就是删除。
+	 *	注：reset与revert的区别
+	 *		reset：回退<至>某个版本，不保存被回退版本的提交记录。且使用reset回退后需要使用git push -f 进行强制推送，因为此时我们本地库HEAD指向的版本比远程库的要旧
+	 *		revert：回退某个版本，保存被回退版本的提交记录，且revert后会生成一个新的版本
 	 *
 	 *	工作区（Working Directory）：电脑中可以看到的目录，如上述的learn_git文件夹，每个项目对应一个工作区。
 	 *	版本库（Repository）：每一个工作区中都有一个隐藏的.git文件夹，它就是Git的版本库，使用git init后，即会在该文件夹下创建。
@@ -87,8 +92,7 @@ public class Readme {
 	 *			origin  http://10.100.21.13/datacenter/yzbizcenter.git (push)
 	 *			注：fetch、push代表了获取和推送的地址，如果看不到push地址则说明没有推送权限。
 	 *		删除关联的远程仓库：git remote rm origin；origin表示名称，删除时先查看关联的远程仓库，然后根据名称删除。
-	 *		将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称，如果该分支在远程仓库不存在，一般会自动进行创建。
-	 *		注：使用https地址进行推送需要输入账号密码，如果使用ssh方式，需要进行一些配置：https://blog.csdn.net/coco_1998_2/article/details/84993088
+	 *		将本地库的当前分支推送到远程库的指定分支上： git push origin master；origin表示远程库名称，master表示远程库的分支名称
 	 *	
 	 *	分支：
 	 *		查看本地仓库分支：git branch ，其中带星号的表示当前当前所处的分支。
@@ -122,6 +126,6 @@ public class Readme {
 	 *		4.在develop分支下提交代码并推送到远程仓库
 	 *		5.可根据需要删除feature分支
 	 *
-	 *		
+	 *
 	 */
 }
