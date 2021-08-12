@@ -63,8 +63,11 @@ public class Readme {
 	 *	git reflog 查看提交记录
 	 *		注：log只能看当前版本之前的记录，reflog可以查看当前版本之后的记录，用于回退时查询提交id
 	 *	git reset --hard HEAD^ 回到当前版本的上一个版本，同理HEAD^^代表当前版本的前两个版本
-	 *	git reset --hard  4f36ad5735d75e92d167db410c321f9c43354390  回到制定提交id的版本 
-	 *	
+	 *	git reset --hard  4f36ad5735d75e92d167db410c321f9c43354390  回到指定提交id的版本
+	 *  git revert <committed>  revert commit_id能产生一个与commit_id 完全相反的提交，即 commit_id 里是添加， revert 提交里就是删除。
+	 *	注：reset与revert的区别
+	 *		reset：回退<至>某个版本，不保存被回退版本的提交记录。且使用reset回退后需要使用git push -f 进行强制推送，因为此时我们本地库HEAD指向的版本比远程库的要旧
+	 *		revert：回退某个版本，保存被回退版本的提交记录，且revert后会生成一个新的版本
 	 *
 	 *	工作区（Working Directory）：电脑中可以看到的目录，如上述的learn_git文件夹，每个项目对应一个工作区。
 	 *	版本库（Repository）：每一个工作区中都有一个隐藏的.git文件夹，它就是Git的版本库，使用git init后，即会在该文件夹下创建。
